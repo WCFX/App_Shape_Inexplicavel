@@ -9,8 +9,8 @@ const { Navigator, Screen } = createStackNavigator();
 
 export default () => (
   <Navigator>
-    <Screen name="Home" component={Home} />
     <Screen name="Preload" component={Preload} />
+    <Screen name="Home" component={Home} />
     <Screen name="AppTab" component={AppTab} />
   </Navigator>
 );
