@@ -3,7 +3,7 @@ import { Container, Title } from './styles';
 
 const AppTab = () => (
   <Container>
-    <Title>Nois</Title>
+    <Title>Após estar logado tem que cair aqui</Title>
   </Container>
 );
 

@@ -3,7 +3,7 @@ import { Container, Title } from './styles';
 
 const Home = () => (
   <Container>
-    <Title>Olá Mundo</Title>
+    <Title>Não está logado cai aqui </Title>
   </Container>
 );
 

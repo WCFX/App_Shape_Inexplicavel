@@ -14,7 +14,16 @@ const Preload = (props) => {
       })
     );
   } else {
-    // mandar tbm
+    props.navigation.dispatch(
+      StackActions.reset({
+        index: 0,
+        actions: [
+          CommonActions.navigate({
+            name: 'AppTab',
+          }),
+        ],
+      })
+    );
   }
 
   return null;
