@@ -1,44 +1,21 @@
-import { StackActions, CommonActions } from '@react-navigation/native';
-import { connect } from 'react-redux';
+import React, { useEffect, useContext } from 'react';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
 
-const Preload = (props) => {
-  props.navigation.dispatch(
-    CommonActions.navigate({
-      name: 'Home',
-    })
-  );
+// import { UserContext } from '../../contexts/UserContext';
 
-  // if (!props.name) {
-  //   props.navigation.dispatch(
-  //     StackActions.reset({
-  //       index: 0,
-  //       actions: [
-  //         CommonActions.navigate({
-  //           name: 'Home',
-  //         }),
-  //       ],
-  //     })
-  //   );
-  // } else {
-  //   props.navigation.dispatch(
-  //     StackActions.reset({
-  //       index: 0,
-  //       actions: [
-  //         CommonActions.navigate({
-  //           name: 'AppTab',
-  //         }),
-  //       ],
-  //     })
-  //   );
-  // }
+import { Container } from './styles';
 
-  return null;
+const Preload = () => {
+  const { navigate, reset } = useNavigation();
+  // const { dispatch: userDispatch } = useContext(UserContext);
+
+  useEffect(() => {
+    reset({
+      routes: [{ name: 'Home' }],
+    });
+  }, []);
+  return <Container />;
 };
 
-const mapStateToProps = (state) => {
-  return {
-    name: state.userReducer.name,
-  };
-};
-
-export default connect(mapStateToProps)(Preload);
+export default Preload;
